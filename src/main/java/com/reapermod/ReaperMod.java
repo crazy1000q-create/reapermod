@@ -102,7 +102,7 @@ public class ReaperMod implements ModInitializer {
     static Item.Settings armor(EquipmentType type, AttributeModifierSlot slot, String id, String name,
                                int armor, int hp, String[] lore) {
         Identifier base = Identifier.of(ID, id);
-        return new Item.Settings().armor(ArmorMaterials.NETHERITE, type).rarity(Rarity.EPIC)
+        return ArmorMaterials.NETHERITE.applySettings(new Item.Settings(), type)
                 .component(DataComponentTypes.ITEM_NAME, c(name))
                 .component(DataComponentTypes.LORE, lore(lore))
                 .attributeModifiers(AttributeModifiersComponent.builder()
